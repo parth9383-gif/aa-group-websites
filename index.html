@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AA Group of Companies — Woodbridge, Ontario</title>
+<meta name="description" content="AA Group of Companies is a family-led holding company in Woodbridge, Ontario, operating five businesses across food, investment, commodities, travel, and healthcare.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AA Group of Companies — Woodbridge, Ontario">
+<meta property="og:description" content="AA Group of Companies is a family-led holding company in Woodbridge, Ontario, operating five businesses across food, investment, commodities, travel, and healthcare.">
+<meta name="theme-color" content="#0e0f12">
+<link rel="icon" type="image/png" href="media/site/Untitled-1-01-300x93.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+/* ===== home-specific sections ===== */
+.portrait-stage{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;min-height:0;overflow:visible}
+.portrait-stage__halo{display:none}
+.portrait-wrap{position:relative;display:grid;place-items:center;z-index:1;width:100%}
+.mono-panel{position:absolute;left:50%;top:0;translate:-50% -24%;z-index:0;pointer-events:none;opacity:.4;
+  display:flex;flex-direction:column;align-items:center;line-height:.72}
+.mono__a{font-family:var(--serif);font-weight:700;letter-spacing:-.05em;color:transparent;
+  background:linear-gradient(120deg,var(--gold-700),var(--gold-300) 35%,var(--gold-100) 55%,var(--gold-500));
+  -webkit-background-clip:text;background-clip:text;filter:drop-shadow(0 0 60px rgba(210,174,109,.22))}
+.mono__a--top{font-size:min(130px,16vw)}
+.mono__a--base{font-size:min(320px,40vw)}
+.portrait{position:relative;z-index:2;width:min(420px,72vw);border-radius:var(--radius-lg);overflow:hidden;
+  border:1px solid var(--line-gold);box-shadow:var(--sh-3),0 0 0 1px rgba(210,174,109,.12);
+  background:linear-gradient(160deg,#1b1e21,#0e0f12)}
+.portrait img{width:100%;height:clamp(420px,58vh,620px);object-fit:cover;object-position:50% 12%;filter:saturate(.96) contrast(1.02)}
+.portrait::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(14,15,18,0) 55%,rgba(14,15,18,.55) 100%)}
+.portrait__caption{position:absolute;left:20px;bottom:18px;z-index:3;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(var(--txt-rgb),.75);font-weight:600}
+.portrait__caption b{color:var(--gold-hi)}
+.chips{position:relative;z-index:3;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:0}
+.chip{font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--gold-hi);
+  padding:6px 12px;border:1px solid var(--line-gold);border-radius:var(--radius-pill);background:rgba(210,174,109,.06);
+  transition:background var(--t-fast),border-color var(--t-fast),transform var(--t-fast)}
+.chip:hover{background:rgba(210,174,109,.14);border-color:var(--gold);transform:translateY(-2px)}
+.scrollcue{display:none}
+.hero__credit{position:absolute;right:24px;bottom:16px;z-index:2;font-size:11px;color:rgba(var(--txt-rgb),.4)}
+
+/* standard (4 pillars) */
+.std{position:relative;background:var(--panel-2);border-bottom:1px solid var(--line-dark);overflow:hidden}
+.std__ghost{position:absolute;top:16px;right:clamp(.5rem,3vw,2.5rem);width:clamp(180px,24vw,320px);height:auto;opacity:.08;pointer-events:none;user-select:none;
+  filter:brightness(0) invert(1) sepia(.3) saturate(2.2) hue-rotate(5deg) brightness(1.05)}
+[data-theme="light"] .std__ghost{filter:none;opacity:.07}
+.std__eyebrow-logo{display:inline-block;height:15px;width:auto;vertical-align:-2px;margin-inline:2px;
+  filter:brightness(0) invert(1) sepia(.3) saturate(2.2) hue-rotate(5deg) brightness(1.05)}
+[data-theme="light"] .std__eyebrow-logo{filter:none}
+.std__grid{display:grid;grid-template-columns:5fr 7fr;gap:56px;padding-block:100px 88px}
+.std__intro{position:sticky;top:calc(var(--header-h) + 32px);align-self:start}
+.std__lede{color:rgba(var(--txt-rgb),.68);font-size:15px;max-width:340px;line-height:1.6;margin-top:4px}
+.std__rail{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.std__pillar{padding:0 26px;border-left:1px solid var(--line-dark)}
+.std__pillar:first-child{border-left:none;padding-left:0}
+.std__num{font-family:var(--serif);font-weight:800;font-size:clamp(56px,6vw,92px);line-height:.95;color:transparent;
+  background:linear-gradient(115deg,var(--gold-deep),var(--gold) 45%,var(--gold-hi));-webkit-background-clip:text;background-clip:text}
+.std__pillar h3{font-family:var(--serif);font-size:21px;font-weight:600;color:var(--ivory);margin:12px 0 8px}
+.std__pillar p{font-size:13px;color:rgba(var(--txt-rgb),.64);line-height:1.55}
+.std__proof{margin-top:14px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-hi);font-weight:700}
+.std__strip{grid-column:1/-1;display:flex;gap:40px;margin-top:56px;padding-top:24px;border-top:1px solid var(--line-dark);flex-wrap:wrap}
+.std__strip span{font-size:12px;color:rgba(var(--txt-rgb),.55);letter-spacing:.06em;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px}
+.std__strip span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold)}
+
+/* founder & book */
+.founder{background:var(--bg);position:relative}
+.founder__grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center;padding-block:100px}
+.founder__portrait{position:relative;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--line-gold);box-shadow:var(--sh-3)}
+.founder__portrait img{width:100%;height:auto;object-fit:cover;object-position:50% 12%}
+.founder__portrait::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(14,15,18,.5))}
+.founder__quote{font-family:var(--serif);font-size:clamp(20px,2.4vw,28px);line-height:1.4;color:var(--gold-100);font-style:italic;margin-top:28px}
+.founder__quote::before{content:"\201C";color:var(--gold-hi);font-size:1.6em;line-height:0;vertical-align:-.2em;margin-right:2px}
+.book-grid{display:grid;grid-template-columns:auto 1fr;gap:34px;align-items:center;margin-top:44px;padding:34px;border:1px solid var(--line-dark);border-radius:var(--radius-lg);background:var(--panel)}
+.book-grid img{width:200px;height:auto;border-radius:6px 14px 14px 6px;box-shadow:0 34px 66px -22px rgba(0,0,0,.85),0 12px 22px -10px rgba(0,0,0,.55);border:1px solid var(--line-gold);rotate:-3deg;filter:brightness(1.14) contrast(1.03)}
+.book-info h3{font-family:var(--serif);font-size:28px;font-weight:600;color:var(--ivory)}
+.book-info .role{font-size:13px;color:var(--gold-hi);margin-top:4px;letter-spacing:.02em}
+.book-facts{list-style:none;margin-top:18px;display:grid;gap:10px}
+.book-facts li{position:relative;padding-left:22px;font-size:14px;color:rgba(var(--txt-rgb),.72);line-height:1.55}
+.book-facts li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--gold)}
+.buy-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.photo-note{font-size:11px;color:rgba(var(--txt-rgb),.5);margin-top:14px;letter-spacing:.02em}
+
+@media(max-width:1000px){
+  .portrait-stage{min-height:0}
+  .std__grid{grid-template-columns:1fr;gap:48px}
+  .std__intro{position:static}
+  .std__rail{grid-template-columns:repeat(2,1fr);gap:32px 0}
+  .founder__grid{grid-template-columns:1fr;gap:40px}
+}
+@media(max-width:760px){
+  .std__rail{grid-template-columns:1fr;gap:26px}
+  .std__pillar{padding:0 0 26px;border-left:none;border-bottom:1px solid var(--line-dark)}
+  .std__pillar:last-child{border-bottom:none}
+  .portrait img{height:clamp(360px,64vw,520px)}
+  .mono__a--top{font-size:min(88px,20vw)}
+  .mono__a--base{font-size:min(210px,48vw)}
+  .scrollcue{display:none}
+  .book-grid{grid-template-columns:1fr;justify-items:center;text-align:center}
+  .book-facts li{text-align:left}
+  .buy-links{justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<header class="header" id="top">
+  <span class="progress" aria-hidden="true"></span>
+  <div class="container header__inner">
+    <a class="header__logo" href="index.html" aria-label="AA Group of Companies — home">
+      <img src="media/site/Untitled-1-01-300x93.png" alt="AA Group of Companies" width="300" height="93" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+      <span class="logo-fallback" hidden>AA <b style="color:var(--gold-hi)">Group</b></span>
+    </a>
+    <nav class="nav" id="site-nav" aria-label="Primary">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="about.html">About us</a>
+      <a href="divisions.html">Company divisions</a>
+      <a href="team.html">Team profile</a>
+      <a href="contact.html">Contact</a>
+      <a href="book.html" class="nav__book">The book</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav"><span class="bars"><span></span><span></span><span></span></span></button>
+    <a class="header__cta" href="contact.html">Contact us <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="container hero__inner">
+      <div>
+        <p class="eyebrow hero__eyebrow" data-reveal>AA Group of Companies · Family-led since 2004</p>
+        <h1 class="replay" aria-label="One restaurant, 2004. Five businesses today.">
+          <span class="mask"><span class="mask__in" style="--d:.08s"><em>One</em> restaurant, <em>2004.</em></span></span>
+          <span class="mask"><span class="mask__in" style="--d:.22s"><em>Five</em> businesses today.</span></span>
+        </h1>
+        <p class="hero__sub" data-reveal style="--d:.3s">Built by Atiq Ahmad and still family-led: 60+ restaurants, 1,200+ people, 120 managers, one way of working.</p>
+        <div class="hero__founder" data-reveal style="--d:.38s">
+          <img class="hf-img" src="media/book/atiq-portrait.webp" alt="Atiq Ahmad — Founder and President of AA Group of Companies" width="750" height="1024" decoding="async">
+          <div class="hf-txt"><b>Atiq Ahmad</b><span>Founder &amp; President — author of <em>Thinking into Success</em></span></div>
+        </div>
+        <div class="hero__actions" data-reveal style="--d:.46s">
+          <a class="btn btn--gold" href="about.html">Our story <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--outline" href="divisions.html">Explore the group</a>
+        </div>
+        <figure class="book-hero" data-reveal style="--d:.54s">
+          <img src="media/book/book-cover.webp" alt="Thinking into Success by Atiq Ahmad — book cover" width="752" height="1024" loading="lazy" decoding="async">
+          <figcaption><b>By Atiq Ahmad.</b> 100% of proceeds go to orphans. <a href="book.html">The full book page →</a></figcaption>
+        </figure>
+      </div>
+
+      <div class="portrait-stage" data-reveal="scale" style="--d:.25s">
+        <span class="portrait-stage__halo" aria-hidden="true"></span>
+        <div class="portrait-wrap">
+          <div class="mono-panel" aria-hidden="true">
+            <span class="mono__a mono__a--top">A</span>
+            <span class="mono__a mono__a--base">A</span>
+          </div>
+          <figure class="portrait">
+            <img src="media/book/atiq-portrait.webp" alt="Atiq Ahmad — Founder and President of AA Group of Companies" width="750" height="1024" fetchpriority="high" decoding="async">
+            <figcaption class="portrait__caption">Atiq Ahmad · <b>Founder &amp; President</b></figcaption>
+          </figure>
+        </div>
+        <div class="chips" aria-label="AA Group divisions">
+          <span class="chip">Food</span><span class="chip">Investment</span><span class="chip">Commodities</span><span class="chip">Travel</span><span class="chip">Healthcare</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STRIP ===== -->
+  <div class="strip" aria-label="Recognition and news">
+    <div class="strip__inner">
+      <a class="strip__item" href="https://triec.ca/aa-group-of-companies-shortlisted-applicant-for-the-7th-annual-is-awards/" target="_blank" rel="noopener noreferrer">
+        <b>Recognition</b><span>Shortlisted — 7th Annual IS Awards, TRIEC</span>
+      </a>
+      <a class="strip__item" href="https://www.urdupoint.com/en/pakistan/pakistani-entrepreneur-atiq-ahmads-book-1933269.html" target="_blank" rel="noopener noreferrer">
+        <b>Book launch</b><span>"Thinking into Success" launched in Dubai, 22 Feb 2025 — graced by H.E. Hussain Muhammad, Consul General of Pakistan</span>
+      </a>
+      <div class="strip__item">
+        <b>Available at</b><span>Amazon · Gulf News store · Kinokuniya</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== STATS ===== -->
+  <div class="stat-band">
+    <div class="container stat-grid">
+      <div data-reveal><div class="stat__num" data-count="60" data-suffix="+">60+</div><div class="stat__label">Restaurants</div></div>
+      <div data-reveal style="--d:.08s"><div class="stat__num" data-count="1200" data-suffix="+">1,200+</div><div class="stat__label">Team members</div></div>
+      <div data-reveal style="--d:.16s"><div class="stat__num" data-count="120" data-suffix="">120</div><div class="stat__label">Certified managers</div></div>
+      <div data-reveal style="--d:.24s"><div class="stat__num" data-count="5" data-suffix="">5</div><div class="stat__label">Divisions</div></div>
+    </div>
+  </div>
+
+  <!-- ===== STANDARD ===== -->
+  <section class="std" id="standard">
+    <img class="std__ghost" src="media/site/Untitled-1-01-300x93.png" alt="" width="300" height="93" aria-hidden="true">
+    <div class="container std__grid">
+      <div class="std__intro" data-reveal>
+        <p class="eyebrow">The <img class="std__eyebrow-logo" src="media/site/Untitled-1-01-300x93.png" alt="AA" width="300" height="93"> Standard</p>
+        <h2 class="section__title" style="margin-top:14px">What did not change between one restaurant and five.</h2>
+        <div class="section__hair" aria-hidden="true"></div>
+        <p class="std__lede">Scale is the easy part to see. These four carried it from the first restaurant to 1,200 people.</p>
+      </div>
+      <div class="std__rail">
+        <div class="std__pillar" data-reveal style="--d:0">
+          <div class="std__num" aria-hidden="true">01</div>
+          <h3>Family-led</h3>
+          <p>One family founded the group and still leads it. Decisions are made close to the work, not far from it.</p>
+          <div class="std__proof">Founded 2018 · Still family-led</div>
+        </div>
+        <div class="std__pillar" data-reveal style="--d:.1s">
+          <div class="std__num" aria-hidden="true">02</div>
+          <h3>Discipline</h3>
+          <p>The same standard in the sixtieth restaurant as in the first. Systems, not shortcuts.</p>
+          <div class="std__proof">60+ restaurants · One way of working</div>
+        </div>
+        <div class="std__pillar" data-reveal style="--d:.2s">
+          <div class="std__num" aria-hidden="true">03</div>
+          <h3>Leadership</h3>
+          <p>Managers are the business. The group grows the people who run the floor.</p>
+          <div class="std__proof">120 managers · 1,200+ people</div>
+        </div>
+        <div class="std__pillar" data-reveal style="--d:.3s">
+          <div class="std__num" aria-hidden="true">04</div>
+          <h3>Giving back</h3>
+          <p>Success is measured by what it returns. Every dollar the founder's book earns goes to orphans.</p>
+          <div class="std__proof">100% of proceeds to orphans</div>
+        </div>
+      </div>
+      <div class="std__strip" data-reveal>
+        <span>Shortlisted — TRIEC IS Awards</span><span>Book launch covered by APP / UrduPoint, Dubai</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOUNDER & BOOK ===== -->
+  <section class="founder" id="founder">
+    <div class="container">
+      <div class="founder__grid">
+        <figure class="founder__portrait" data-reveal="left">
+          <img src="media/book/atiq-portrait.webp" alt="Atiq Ahmad — Founder and President of AA Group of Companies" width="750" height="1024" loading="lazy" decoding="async">
+        </figure>
+        <div data-reveal>
+          <p class="eyebrow">Founder &amp; Book</p>
+          <h2 class="section__title" style="margin-top:14px">The story, written down.</h2>
+          <div class="section__hair" aria-hidden="true"></div>
+          <p class="section__lede">Atiq Ahmad arrived in Canada in 2004 and opened his first Popeyes restaurant within a year. The lessons from building five businesses are now a book.</p>
+          <p class="founder__quote">Success is measured by what it returns — and every dollar this book earns returns to the children who need it most.</p>
+
+          <div class="book-grid">
+            <img src="media/book/book-cover.webp" alt="Thinking into Success by Atiq Ahmad" width="752" height="1024" loading="lazy" decoding="async">
+            <div class="book-info">
+              <h3>Thinking into Success</h3>
+              <div class="role">By Atiq Ahmad · Launched Dubai, 22 February 2025</div>
+              <ul class="book-facts">
+                <li>Insights on entrepreneurship, leadership, and personal growth for aspiring entrepreneurs.</li>
+                <li>Launch graced by H.E. Hussain Muhammad, Consul General of Pakistan.</li>
+                <li>All proceeds from sales support orphans.</li>
+              </ul>
+              <div class="buy-links">
+                <a class="btn btn--gold btn--sm" href="https://www.thinkingintosuccess.ca/#price" target="_blank" rel="noopener noreferrer">Order — book site <svg class="ico ico--sm" aria-hidden="true"><use href="#i-ext"/></svg></a>
+                <a class="btn btn--outline btn--sm" href="https://www.amazon.ae/Thinking-Into-SUCCESS-Blueprint-Enterpreneurial/dp/1069004405" target="_blank" rel="noopener noreferrer">Amazon.ae <svg class="ico ico--sm" aria-hidden="true"><use href="#i-ext"/></svg></a>
+                <a class="btn btn--outline btn--sm" href="https://store.gulfnews.com/" target="_blank" rel="noopener noreferrer">Gulf News <svg class="ico ico--sm" aria-hidden="true"><use href="#i-ext"/></svg></a>
+                <a class="btn btn--outline btn--sm" href="https://uae.kinokuniya.com/" target="_blank" rel="noopener noreferrer">Kinokuniya <svg class="ico ico--sm" aria-hidden="true"><use href="#i-ext"/></svg></a>
+              </div>
+            </div>
+          </div>
+          <p class="photo-note">All photography is real — drawn from the AA Group company archive and the press.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta">
+    <div class="container cta__inner">
+      <div>
+        <p class="eyebrow" data-reveal>Five businesses. One family.</p>
+        <h2 data-reveal style="--d:.08s">From one restaurant in 2004 to <em>five divisions</em> today.</h2>
+        <p data-reveal style="--d:.16s">Food, investment, commodities, travel, and healthcare — each one routes you straight to the right place.</p>
+      </div>
+      <a class="btn btn--gold" href="divisions.html" data-reveal style="--d:.24s">Explore the group <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="media/site/Untitled-1-01-300x93.png" alt="AA Group of Companies" width="300" height="93" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+        <span class="logo-fallback" hidden><b>AA Group of Companies</b></span>
+        <p>Family-led in Woodbridge, Ontario, and proud of the people who make it work.</p>
+      </div>
+      <div class="footer-col">
+        <b>Divisions</b>
+        <a href="divisions.html#popeyes">Popeyes Louisiana Kitchen</a>
+        <a href="divisions.html#investment">AA Investment Group</a>
+        <a href="divisions.html#commodity">AA Commodity Group</a>
+        <a href="https://aatourism.ca/" target="_blank" rel="noopener noreferrer">AA Travel &amp; Tourism</a>
+        <a href="https://www.ontariocardioimaging.com/" target="_blank" rel="noopener noreferrer">Ontario Cardio Imaging</a>
+      </div>
+      <div class="footer-col">
+        <b>Group</b>
+        <a href="index.html">Home</a>
+        <a href="about.html">About us</a>
+        <a href="divisions.html">Company divisions</a>
+        <a href="team.html">Team profile</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="book.html">The book</a>
+      </div>
+      <div class="footer-col">
+        <b>Connect</b>
+        <a href="mailto:contact@aagroupofcompanies.com">contact@aagroupofcompanies.com</a>
+        <a href="tel:+19058561500">(905) 856-1500</a>
+        <div class="social-row">
+          <a class="social" href="https://www.facebook.com/aagroupofcompaniesofficial" target="_blank" rel="noopener noreferrer" aria-label="AA Group on Facebook"><svg aria-hidden="true"><use href="#i-facebook"/></svg></a>
+          <a class="social" href="https://www.instagram.com/aagroupofcompaniesofficial/" target="_blank" rel="noopener noreferrer" aria-label="AA Group on Instagram"><svg aria-hidden="true"><use href="#i-instagram"/></svg></a>
+          <a class="social" href="https://www.youtube.com/@AAGroupofCompaniesOfficial" target="_blank" rel="noopener noreferrer" aria-label="AA Group on YouTube"><svg aria-hidden="true"><use href="#i-youtube"/></svg></a>
+          <a class="social" href="https://www.tiktok.com/@aagroupofcompanies" target="_blank" rel="noopener noreferrer" aria-label="AA Group on TikTok"><svg aria-hidden="true"><use href="#i-tiktok"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footnotes">
+      <p>¹ 60+ restaurant locations and $75M+ Popeyes division revenue, as published on aagroupofcompanies.com/company-divisions.</p>
+      <p>Popeyes® is a registered trademark of its owner. AA Group of Companies operates Popeyes restaurants as a franchisee.</p>
+      <p>All photography on this site is real — drawn from the AA Group company archive (2020–2024) and the press.</p>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 AA Group of Companies. All rights reserved. · Est. 2018 · Woodbridge, Ontario, Canada</span>
+      <span>AA Group · Home</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>
