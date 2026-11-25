@@ -25,16 +25,16 @@
 .mono__a{font-family:var(--serif);font-weight:700;letter-spacing:-.05em;color:transparent;
   background:linear-gradient(120deg,var(--gold-700),var(--gold-300) 35%,var(--gold-100) 55%,var(--gold-500));
   -webkit-background-clip:text;background-clip:text;filter:drop-shadow(0 0 60px rgba(210,174,109,.22))}
-.mono__a--top{font-size:min(130px,16vw)}
-.mono__a--base{font-size:min(320px,40vw)}
+.mono__a--top{font-size:min(120px,15vw)}
+.mono__a--base{font-size:min(280px,35vw)}
 .portrait{position:relative;z-index:2;width:min(420px,72vw);border-radius:var(--radius-lg);overflow:hidden;
   border:1px solid var(--line-gold);box-shadow:var(--sh-3),0 0 0 1px rgba(210,174,109,.12);
   background:linear-gradient(160deg,#1b1e21,#0e0f12)}
-.portrait img{width:100%;height:clamp(420px,58vh,620px);object-fit:cover;object-position:50% 12%;filter:saturate(.96) contrast(1.02)}
+.portrait img{width:100%;height:clamp(420px,58vh,620px);object-fit:cover;object-position:50% 12%;transform:scale(1.02);filter:saturate(.96) contrast(1.02)}
 .portrait::after{content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(180deg,rgba(14,15,18,0) 55%,rgba(14,15,18,.55) 100%)}
-.portrait__caption{position:absolute;left:20px;bottom:18px;z-index:3;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(var(--txt-rgb),.75);font-weight:600}
-.portrait__caption b{color:var(--gold-hi)}
+  background:linear-gradient(180deg,rgba(14,15,18,0) 48%,rgba(14,15,18,.86) 100%)}
+.portrait__caption{position:absolute;left:20px;bottom:18px;z-index:3;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(250,247,242,.9);font-weight:600}
+.portrait__caption b{color:#f3e2a8}
 .chips{position:relative;z-index:3;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:0}
 .chip{font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--gold-hi);
   padding:6px 12px;border:1px solid var(--line-gold);border-radius:var(--radius-pill);background:rgba(210,174,109,.06);
@@ -45,12 +45,12 @@
 
 /* standard (4 pillars) */
 .std{position:relative;background:var(--panel-2);border-bottom:1px solid var(--line-dark);overflow:hidden}
-.std__ghost{position:absolute;top:16px;right:clamp(.5rem,3vw,2.5rem);width:clamp(180px,24vw,320px);height:auto;opacity:.08;pointer-events:none;user-select:none;
+.std__ghost{position:absolute;top:24px;right:clamp(.75rem,3vw,2.5rem);width:clamp(150px,18vw,240px);height:auto;opacity:.12;pointer-events:none;user-select:none;
   filter:brightness(0) invert(1) sepia(.3) saturate(2.2) hue-rotate(5deg) brightness(1.05)}
-[data-theme="light"] .std__ghost{filter:none;opacity:.07}
-.std__eyebrow-logo{display:inline-block;height:15px;width:auto;vertical-align:-2px;margin-inline:2px;
+[data-theme="light"] .std__ghost{filter:brightness(.42) saturate(1.25);opacity:.10}
+.std__eyebrow-logo{display:inline-block;height:20px;width:auto;vertical-align:-4px;margin-inline:3px;
   filter:brightness(0) invert(1) sepia(.3) saturate(2.2) hue-rotate(5deg) brightness(1.05)}
-[data-theme="light"] .std__eyebrow-logo{filter:none}
+[data-theme="light"] .std__eyebrow-logo{filter:brightness(.42) saturate(1.25)}
 .std__grid{display:grid;grid-template-columns:5fr 7fr;gap:56px;padding-block:100px 88px}
 .std__intro{position:sticky;top:calc(var(--header-h) + 32px);align-self:start}
 .std__lede{color:rgba(var(--txt-rgb),.68);font-size:15px;max-width:340px;line-height:1.6;margin-top:4px}
@@ -200,10 +200,10 @@
 
   <!-- ===== STANDARD ===== -->
   <section class="std" id="standard">
-    <img class="std__ghost" src="media/site/Untitled-1-01-300x93.png" alt="" width="300" height="93" aria-hidden="true">
+    <img class="std__ghost" src="media/site/aa-monogram.png" alt="" width="104" height="93" aria-hidden="true">
     <div class="container std__grid">
       <div class="std__intro" data-reveal>
-        <p class="eyebrow">The <img class="std__eyebrow-logo" src="media/site/Untitled-1-01-300x93.png" alt="AA" width="300" height="93"> Standard</p>
+        <p class="eyebrow">The <img class="std__eyebrow-logo" src="media/site/aa-monogram.png" alt="AA" width="104" height="93"> Standard</p>
         <h2 class="section__title" style="margin-top:14px">What did not change between one restaurant and five.</h2>
         <div class="section__hair" aria-hidden="true"></div>
         <p class="std__lede">Scale is the easy part to see. These four carried it from the first restaurant to 1,200 people.</p>
@@ -303,10 +303,10 @@
       <div class="footer-col">
         <b>Divisions</b>
         <a href="divisions.html#popeyes">Popeyes Louisiana Kitchen</a>
-        <a href="divisions.html#investment">AA Investment Group</a>
-        <a href="divisions.html#commodity">AA Commodity Group</a>
+        <a href="investment/">AA Investment Group</a>
+        <a href="commodities/">AA Commodity Group</a>
         <a href="https://aatourism.ca/" target="_blank" rel="noopener noreferrer">AA Travel &amp; Tourism</a>
-        <a href="https://www.ontariocardioimaging.com/" target="_blank" rel="noopener noreferrer">Ontario Cardio Imaging</a>
+        <a href="cardio/">Ontario Cardio Imaging</a>
       </div>
       <div class="footer-col">
         <b>Group</b>

@@ -68,10 +68,15 @@
     onScroll();
 
     /* reveal */
+    var revealEls = document.querySelectorAll('[data-reveal]');
     var io = new IntersectionObserver(function(entries){
       entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-in'); io.unobserve(e.target); } });
-    }, {threshold:.14, rootMargin:'0px 0px -8% 0px'});
-    Array.prototype.forEach.call(document.querySelectorAll('[data-reveal]'), function(el){ io.observe(el); });
+    }, {threshold:.01, rootMargin:'0px 0px 140px 0px'});
+    Array.prototype.forEach.call(revealEls, function(el){
+      var r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight * 1.15){ el.classList.add('is-in'); }
+      else { io.observe(el); }
+    });
 
     /* count-up */
     function countUp(el){
@@ -213,52 +218,8 @@
     }
 
     /* ============================================================
-       3 · PREMIUM CURSOR — gold dot + trailing ring (lerp, no jitter)
+       3 · NATIVE CURSOR (custom cursor overlay removed)
        ============================================================ */
-    var cur = null, ring = null, tx = -100, ty = -100, cx = -100, cy = -100, rx = -100, ry = -100, shown = false;
-    function curShow(){ if (cur && shown){ cur.style.opacity = '1'; ring.style.opacity = '1'; } }
-    function curHide(){ if (cur){ cur.style.opacity = '0'; ring.style.opacity = '0'; } }
-    if (fine && !reduced){
-      cur = document.createElement('div'); cur.className = 'aa-cursor';
-      ring = document.createElement('div'); ring.className = 'aa-cursor-ring';
-      document.body.appendChild(ring); document.body.appendChild(cur); /* dot paints on top of ring's fill */
-      root.classList.add('aa-cur');
-
-      window.addEventListener('pointermove', function(e){
-        tx = e.clientX; ty = e.clientY;
-        if (!shown){ shown = true; cur.style.opacity = '1'; ring.style.opacity = '1'; }
-      }, {passive:true});
-      document.addEventListener('mouseleave', curHide);
-      document.addEventListener('mouseenter', curShow);
-
-      document.addEventListener('pointerover', function(e){
-        var t = e.target;
-        if (!t || !t.closest) return;
-        if (t.closest('input, textarea, select, [contenteditable="true"]')){ curHide(); return; }
-        curShow();
-        var media = t.closest('.alive, .split .media, .hero-visual, .gitem, .card, .tile, .rel-card, .person');
-        var link = t.closest('a, button, .btn, [role="button"], label, .chip, .nav-cta');
-        ring.classList.toggle('is-media', !!media); cur.classList.toggle('is-media', !!media);
-        ring.classList.toggle('is-link', !!link);   cur.classList.toggle('is-link', !!link);
-      });
-      document.addEventListener('pointerout', function(e){
-        var from = e.target, to = e.relatedTarget;
-        if (to && from && from.contains(to)) return;
-        ring.classList.remove('is-media'); cur.classList.remove('is-media');
-        ring.classList.remove('is-link');   cur.classList.remove('is-link');
-        curShow();
-      });
-
-      (function loop(){
-        cx += (tx - cx) * 0.42;
-        cy += (ty - cy) * 0.42;
-        rx += (tx - rx) * 0.16;
-        ry += (ty - ry) * 0.16;
-        cur.style.transform = 'translate3d(' + cx.toFixed(2) + 'px,' + cy.toFixed(2) + 'px,0)';
-        ring.style.transform = 'translate3d(' + rx.toFixed(2) + 'px,' + ry.toFixed(2) + 'px,0)';
-        requestAnimationFrame(loop);
-      })();
-    }
 
     /* ============================================================
        4 · AMBIENT AURORA drifts toward cursor (individual translate/rotate)
@@ -354,10 +315,7 @@
       var layers = [];
       var defs = [
         ['.mono-panel', 0.14, 0],           /* hub ghost "A" */
-        ['.book-hero', 0.05, 0],            /* hub book cover */
-        ['.hero-visual img', 0.14, -0.004], /* cardio hero */
-        ['.hero-media img', 0.14, -0.003],  /* investment/commodities */
-        ['.split .media img', 0.14, -0.003]
+        ['.book-hero', 0.05, 0]             /* hub book cover */
       ];
       for (var d = 0; d < defs.length; d++){
         var els = document.querySelectorAll(defs[d][0]);
@@ -393,36 +351,8 @@
     }
 
     /* ============================================================
-       9 · CLIP-PATH IMAGE UNMASK (reveals when scrolled into view)
+       9 · IMAGE VISIBILITY (immediate display, no clip delay)
        ============================================================ */
-    if (!reduced){
-      var clipEls = document.querySelectorAll('.hero-visual img, .hero-media img, .split .media img, .card .ph img, .gitem img, .person__img img, .div-card img');
-      var added = [];
-      for (var c2 = 0; c2 < clipEls.length; c2++){
-        var im = clipEls[c2];
-        if (im.classList.contains('aa-clip')) continue;
-        im.classList.add('aa-clip');
-        added.push(im);
-      }
-      if (added.length && 'IntersectionObserver' in window){
-        var io = new IntersectionObserver(function(entries){
-          for (var z = 0; z < entries.length; z++){
-            if (entries[z].isIntersecting){ entries[z].target.classList.add('is-in'); io.unobserve(entries[z].target); }
-          }
-        }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
-        for (var c3 = 0; c3 < added.length; c3++){ io.observe(added[c3]); }
-        setTimeout(function(){
-          for (var c4 = 0; c4 < added.length; c4++){
-            var el = added[c4];
-            if (el.classList.contains('is-in')) continue;
-            var r = el.getBoundingClientRect();
-            if (r.top < innerHeight && r.bottom > 0) el.classList.add('is-in');
-          }
-        }, 2800);
-      } else {
-        for (var c5 = 0; c5 < added.length; c5++){ added[c5].classList.add('is-in'); }
-      }
-    }
 
     /* ============================================================
        10 · LIVE ECG SWEEP (cardio)
